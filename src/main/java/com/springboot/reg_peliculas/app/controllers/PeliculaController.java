@@ -1,6 +1,5 @@
 package com.springboot.reg_peliculas.app.controllers;
 
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,5 +69,6 @@ public class PeliculaController {
 
 		return "redirect:/lista";
 	}
+	
 	
 }

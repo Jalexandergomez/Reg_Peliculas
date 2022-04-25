@@ -22,7 +22,6 @@
 						<th>Nombre De La Película</th>
 						<th>Genero</th>
 						<th>Director</th>
-						<th>Observaciones</th>
 
 					</tr>
 				</thead>
@@ -32,7 +31,6 @@
 						<td th:text="${pelicula.titulo}"></td>
 						<td th:text="${pelicula.genero}"></td>
 						<td th:text="${pelicula.director}"></td>
-						<td th:text="${pelicula.observaciones}"></td>
 						<td><a th:href="@{/formulario/} + ${pelicula.id}"
 							th:text='Editar'></a></td>
 						<td><a th:href="@{/eliminar/} + ${pelicula.id}"

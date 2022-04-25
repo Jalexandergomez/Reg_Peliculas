@@ -40,4 +40,5 @@ public class PeliculaServiceImpl implements IPeliculaService {
 		peliculaDao.deleteById(id);
 	}
 
+	
 }

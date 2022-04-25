@@ -7,45 +7,34 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+
 </head>
 <body>
-	<div class="container" style="max-width: 1000px; margin: 30px">
+	<div style="max-width: 500px; margin: 30px">
 		<p>
 		<h1 th:text="${titulo}"></h1>
 		</p>
-
-		<div>
-			<table class="table table-bordered table-sm table-striped">
-				<thead>
+		<form th:action="@{/formulario}" th:object="${pelicula}" method="post">
+			<div class="form-group">
+				<table class="table-sm" style="max-width: 300px">
 					<tr>
-						<th>Codigo</th>
-						<th>Nombre De La Película</th>
-						<th>Genero</th>
-						<th>Director</th>
-						<th>Observaciones</th>
+						<td>Título</td>
+						<td><input type="text" th:field="*{titulo}" required /></td>
+					</tr>
+					<tr>
+						<td>Género</td>
+						<td><input type="text" th:field="*{genero}" required /></td>
+					</tr>
+					<tr>
+						<td>Director</td>
+						<td><input type="text" th:field="*{director}"  required/></td>
+					</tr>
+				</table>
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="pelicula: ${peliculas}">
-						<td th:text="${pelicula.id}"></td>
-						<td th:text="${pelicula.titulo}"></td>
-						<td th:text="${pelicula.genero}"></td>
-						<td th:text="${pelicula.director}"></td>
-						<td th:text="${pelicula.observaciones}"></td>
-						<td><a th:href="@{/formulario/} + ${pelicula.id}"
-							th:text='Editar'></a></td>
-						<td><a th:href="@{/eliminar/} + ${pelicula.id}"
-							th:text='Eliminar'></a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div style="text-align: right">
-			<p>
-				<a th:href="@{/formulario}"><button>Agregar película</button></a>
-			</p>
-		</div>
+			</div>
+			<input type="submit" th:value="${boton}" /> <input type="hidden"
+				th:field="*{id}" />
+		</form>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

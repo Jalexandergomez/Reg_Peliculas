@@ -18,6 +18,17 @@ public class Pelicula implements Serializable {
 	private String titulo;
 	private String director;
 	private String genero;
+	private String observaciones;
+
+
+
+	public String getObservaciones() {
+		return observaciones;
+	}
+
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
 
 	public Long getId() {
 		return id;
